@@ -2,7 +2,7 @@ const { exportAllDeclaration } = require('@babel/types');
 const Employee = require('../lib/Employee');
 
 describe("Initialization", () => {
-    // Positive text
+    // Positive test - ensures the correct initialization of the class
     it("should create an object with properties of name, id, and email when called with the 'new' keyword", () => {
         // Arrange
         const name = "Laura";
@@ -29,22 +29,34 @@ describe("Initialization", () => {
     // })
 })
 
+// Ensures the function returns the object's name value
 describe("getName", () => {
     it("should return the object's 'name' property value", () => {
         const obj = new Employee("Laura", 4, "laura@laura.com");
         expect(obj.getName()).toBe("Laura")
     })
-
 })
 
+// Ensures the function returns the object's id value
 describe("getId", () => {
-
+    it("should return the object's 'id' property value", () => {
+        const obj = new Employee("Laura", 4, "laura@laura.com");
+        expect(obj.getId()).toBe(4)
+    })
 })
 
+// Ensures the function returns the object's email value
 describe("getEmail", () => {
-
+    it("should return the object's 'email' property value", () => {
+        const obj = new Employee("Laura", 4, "laura@laura.com");
+        expect(obj.getEmail()).toBe("laura@laura.com")
+    })
 })
 
+// Ensures the function returns the object's role
 describe("getRole", () => {
-
+    it("should return the object's role/class name", () => {
+        const obj = new Employee("Laura", 4, "laura@laura.com");
+        expect(obj.getRole()).toBe("Employee")
+    })
 })
