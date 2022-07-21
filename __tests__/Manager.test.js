@@ -17,6 +17,30 @@ describe("Initialization", () => {
     })
 })
 
+// Ensures the function returns the object's name value
+describe("getName", () => {
+    it("should return the object's 'name' property value", () => {
+        const obj = new Manager("Laura", 4, "laura@laura.com", "100");
+        expect(obj.getName()).toBe("Laura")
+    })
+})
+
+// Ensures the function returns the object's id value
+describe("getId", () => {
+    it("should return the object's 'id' property value", () => {
+        const obj = new Manager("Laura", 4, "laura@laura.com", "100");
+        expect(obj.getId()).toBe(4)
+    })
+})
+
+// Ensures the function returns the object's email value
+describe("getEmail", () => {
+    it("should return the object's 'email' property value", () => {
+        const obj = new Manager("Laura", 4, "laura@laura.com", "100");
+        expect(obj.getEmail()).toBe("laura@laura.com")
+    })
+})
+
 // Ensures the function returns the object's role
 describe("getRole", () => {
     it("should return the object's role/class name", () => {
