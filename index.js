@@ -26,7 +26,9 @@ function intern() {
 // Function to generate engineer questions
 function engineer() {
     inquirer.prompt(engineerQuestions).then(answers => {
-        teamInfo = [...teamInfo, { member: "engineer", ...answers}];
+        const engineer = new Engineer(answers.nameQ, answers.idQ, answers.emailQ, answers.githubQ);
+        teamInfo = [...teamInfo, engineer];
+        console.log(teamInfo)
         // Ask user what next member to add
         nextMember();
     })
