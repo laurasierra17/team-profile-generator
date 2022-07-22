@@ -6,13 +6,16 @@ const Intern = require('./lib/Intern');
 // Modules used to prompt questions to users
 const inquirer = require('inquirer');
 
-// Array storing the user's inputs
-let teamInfo = [];
-
 // Questionnaire for each type of employee
 const managerQuestions = require('./dist/managerQuestions');
 const engineerQuestions = require('./dist/engineerQuestions');
 const internQuestions = require('./dist/internQuestions');
+
+// Generate HTML markup
+const generateTemplate = require('./src/template');
+
+// Array storing the user's inputs
+let teamInfo = [];
 
 // Function to generate intern questions
 function intern() {
@@ -65,16 +68,12 @@ function nextMember() {
                     intern();
                     break;
                 default:
+                    // Generate markup with user input
+                    generateTemplate(teamInfo)
                     return;
             }
         })
 }
-
-
-    // depending on user selection, we'll call a function with the questions of the employee that the user selected
-
-    // 4. re ask question 2 when those questions are done
-    // 5. repeat until user selects none
 
 // Function call to initialize app
 manager();
