@@ -1,3 +1,4 @@
+// Questionnaire related to interns
 const internQuestions = [
     {
         type: "input",

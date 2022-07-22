@@ -1,7 +1,9 @@
+// Function that generates a card for each member
 function createCard(member) {
     let thirdList;
     let role;
 
+    // Generate the right third item in the list and role with icon for each member type
     if (member.getRole() === 'Manager'){ 
         thirdList = `Office number: ${member.officeNumber}`;
         role = `<i class="fa-solid fa-lg fa-mug-hot"></i> ${member.getRole()}`
@@ -32,6 +34,7 @@ function createCard(member) {
     `;
 }
 
+// Populate new html file with this markup
 function template(teamInfo) {
     return `
     <!DOCTYPE html>

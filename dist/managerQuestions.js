@@ -1,3 +1,4 @@
+// Questionnaire related to the manager
 const managerQuestions = [
     {
         type: "input",
