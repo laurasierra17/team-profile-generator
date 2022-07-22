@@ -17,7 +17,9 @@ const internQuestions = require('./dist/internQuestions');
 // Function to generate intern questions
 function intern() {
     inquirer.prompt(internQuestions).then(answers => {
-        teamInfo = [...teamInfo, { member: "intern", ...answers}];
+        // Instantiates a new Intern obj and adds it to our array
+        const intern = new Intern(answers.nameQ, answers.idQ, answers.emailQ, answers.schoolQ)
+        teamInfo = [...teamInfo, intern];
         // Ask user what next member to add
         nextMember();
     })
@@ -26,9 +28,9 @@ function intern() {
 // Function to generate engineer questions
 function engineer() {
     inquirer.prompt(engineerQuestions).then(answers => {
+        // Instantiates a new Engineer obj and adds it to our array
         const engineer = new Engineer(answers.nameQ, answers.idQ, answers.emailQ, answers.githubQ);
         teamInfo = [...teamInfo, engineer];
-        console.log(teamInfo)
         // Ask user what next member to add
         nextMember();
     })
@@ -37,6 +39,7 @@ function engineer() {
 // Function to generate manager questions
 function manager() {
     inquirer.prompt(managerQuestions).then(answers => {
+        // Instantiates a new Manager obj and adds it to our array
         const manager = new Manager(answers.nameQ, answers.idQ, answers.emailQ, answers.officeQ);
         teamInfo.push(manager);
         // Ask user what next member to add
