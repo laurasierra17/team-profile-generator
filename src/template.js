@@ -1,16 +1,24 @@
 function createCard(member) {
     let thirdList;
+    let role;
 
-    if (member.getRole() === 'Manager') thirdList = `Office number: ${member.officeNumber}`
-    else if (member.getRole() === 'Engineer') thirdList = `GitHub: <a href="https://www.github.com/${member.getGithub()}">${member.getGithub()}</a>`
-    else thirdList = `School: ${member.getSchool()}`
+    if (member.getRole() === 'Manager'){ 
+        thirdList = `Office number: ${member.officeNumber}`;
+        role = `<i class="fa-solid fa-lg fa-mug-hot"></i>${member.getRole()}`
+    } else if (member.getRole() === 'Engineer') {
+        thirdList = `GitHub: <a href="https://www.github.com/${member.getGithub()}">${member.getGithub()}</a>`
+        role = `<i class="fa-solid fa-lg fa-laptop-code"></i>${member.getRole()}`
+    } else {
+        thirdList = `School: ${member.getSchool()}`
+        role = `<i class="fa-solid fa-lg fa-graduation-cap"></i>${member.getRole()}`
+    }
 
     return `
         <div class="col">
             <div class="card h-100">
             <div class="card-body">
                 <h2 class="card-title">${member.getName()}</h2>
-                <h3 class="card-title">${member.getRole()}</h3>
+                <h3 class="card-title">${role}</h3>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${member.getId()}</li>
                     <li class="list-group-item">Email: <a href="mailto:${member.getEmail()}">${member.getEmail()}</a></li>
