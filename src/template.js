@@ -4,13 +4,13 @@ function createCard(member) {
 
     if (member.getRole() === 'Manager'){ 
         thirdList = `Office number: ${member.officeNumber}`;
-        role = `<i class="fa-solid fa-lg fa-mug-hot"></i>${member.getRole()}`
+        role = `<i class="fa-solid fa-lg fa-mug-hot"></i> ${member.getRole()}`
     } else if (member.getRole() === 'Engineer') {
         thirdList = `GitHub: <a href="https://www.github.com/${member.getGithub()}">${member.getGithub()}</a>`
-        role = `<i class="fa-solid fa-lg fa-laptop-code"></i>${member.getRole()}`
+        role = `<i class="fa-solid fa-lg fa-laptop-code"></i> ${member.getRole()}`
     } else {
         thirdList = `School: ${member.getSchool()}`
-        role = `<i class="fa-solid fa-lg fa-graduation-cap"></i>${member.getRole()}`
+        role = `<i class="fa-solid fa-lg fa-graduation-cap"></i> ${member.getRole()}`
     }
 
     return `
@@ -60,7 +60,7 @@ function template(teamInfo) {
                 <!-- Header of the application -->
                 <header class="p-5 mb-4 bg-light rounded-3">
                     <div class="container-fluid py-5">
-                        <h1 class="display-5 fw-bold">My Team</h1>
+                        <h1 class="display-5 fw-bold mx-auto" style="width: fit-content">My Team</h1>
                     </div>
                 </header>
 
