@@ -14,18 +14,6 @@ describe("Initialization", () => {
         // Assert
         expect(obj).toEqual({ "name": name, "id": id, "email": email});
     })
-
-    // Exception test
-    // it("should throw an error if not provided any values", () => {
-    //     // Arrange
-    //     const employee = () => new Employee();
-    //     const err = new Error(
-    //         "Expect parameters 'name', 'id', 'email' to be non empty"
-    //     );
-
-    //     // Assert
-    //     expect(employee).toThrowError(err);
-    // })
 })
 
 // Ensures the function returns the object's name value
