@@ -6,7 +6,7 @@ function createCard(member) {
         thirdList = `Office number: ${member.officeNumber}`;
         role = `<i class="fa-solid fa-lg fa-mug-hot"></i> ${member.getRole()}`
     } else if (member.getRole() === 'Engineer') {
-        thirdList = `GitHub: <a href="https://www.github.com/${member.getGithub()}">${member.getGithub()}</a>`
+        thirdList = `GitHub: <a href="https://www.github.com/${member.getGithub()}" target="_blank">${member.getGithub()}</a>`
         role = `<i class="fa-solid fa-lg fa-laptop-code"></i> ${member.getRole()}`
     } else {
         thirdList = `School: ${member.getSchool()}`
