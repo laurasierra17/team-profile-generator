@@ -5,6 +5,7 @@ const Intern = require('./lib/Intern');
 
 // Modules used to prompt questions to users
 const inquirer = require('inquirer');
+const fs = require('fs');
 
 // Questionnaire for each type of employee
 const managerQuestions = require('./dist/managerQuestions');
@@ -12,7 +13,7 @@ const engineerQuestions = require('./dist/engineerQuestions');
 const internQuestions = require('./dist/internQuestions');
 
 // Generate HTML markup
-const generateTemplate = require('./src/template');
+const template = require('./src/template');
 
 // Array storing the user's inputs
 let teamInfo = [];
@@ -69,7 +70,9 @@ function nextMember() {
                     break;
                 default:
                     // Generate markup with user input
-                    generateTemplate(teamInfo)
+                    fs.writeFile('./dist/index.html', template(teamInfo), err => {
+                        if (err) console.log(err);
+                    })
                     return;
             }
         })
