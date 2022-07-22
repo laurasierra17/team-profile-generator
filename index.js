@@ -28,8 +28,8 @@ function intern() {
 // Function to generate engineer questions
 function engineer() {
     inquirer.prompt(engineerQuestions).then(answers => {
-        // teamInfo = [{ member: "engineer", ...answers}];
-        console.log("engineer: ", answers)
+        // teamInfo = [...teamInfo, { member: "engineer", ...answers}];
+        console.log(teamInfo)
         // Ask user what next member to add
         nextMember();
     })
@@ -38,8 +38,7 @@ function engineer() {
 // Function to generate manager questions
 function manager() {
     inquirer.prompt(managerQuestions).then(answers => {
-        // teamInfo = [{ member: "manager", ...answers}];
-        console.log("manager: ", answers)
+        teamInfo.push({ member: "manager", ...answers });
         // Ask user what next member to add
         nextMember();
     })
