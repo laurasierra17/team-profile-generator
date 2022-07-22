@@ -59,7 +59,7 @@ function template(teamInfo) {
             <main>
                 <!-- Header of the application -->
                 <header class="p-5 mb-4 bg-light rounded-3">
-                    <div class="container-fluid py-5">
+                    <div class="container-fluid py-5 text-bg-success">
                         <h1 class="display-5 fw-bold mx-auto" style="width: fit-content">My Team</h1>
                     </div>
                 </header>
