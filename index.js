@@ -18,8 +18,7 @@ const internQuestions = require('./dist/internQuestions');
 // Function to generate intern questions
 function intern() {
     inquirer.prompt(internQuestions).then(answers => {
-        // teamInfo = [{ member: "engineer", ...answers}];
-        console.log("intern: ", answers)
+        teamInfo = [...teamInfo, { member: "intern", ...answers}];
         // Ask user what next member to add
         nextMember();
     })
