@@ -1,7 +1,6 @@
 // Constructors for the types of employees
-const Employee = require('./lib/Employee');
-const Engineer = require('./lib/Engineer')
 const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern');
 
 // Modules used to prompt questions to users
@@ -36,7 +35,8 @@ function engineer() {
 // Function to generate manager questions
 function manager() {
     inquirer.prompt(managerQuestions).then(answers => {
-        teamInfo.push({ member: "manager", ...answers });
+        const manager = new Manager(answers.nameQ, answers.idQ, answers.emailQ, answers.officeQ);
+        teamInfo.push(manager);
         // Ask user what next member to add
         nextMember();
     })
