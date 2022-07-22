@@ -14,7 +14,7 @@ function createCard(member) {
     }
 
     return `
-        <div class="col">
+        <div class="col" style="width: 350px">
             <div class="card h-100">
             <div class="card-body">
                 <h2 class="card-title">${member.getName()}</h2>
@@ -65,7 +65,7 @@ function template(teamInfo) {
                 </header>
 
                 <!-- Container for the employee cards -->
-                <section class="row row-cols-1 row-cols-md-3 g-4" id="cards-container">
+                <section class="row row-cols-1 row-cols-md-3 g-4 mx-auto" style="width: 900px" id="cards-container">
                     ${teamInfo.map(member => createCard(member))}
                 </section>
             </main>
