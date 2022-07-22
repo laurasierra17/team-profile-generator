@@ -13,7 +13,7 @@ function createCard(member) {
                 <h3 class="card-title">${member.getRole()}</h3>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${member.getId()}</li>
-                    <li class="list-group-item">Email: ${member.getEmail()}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${member.getEmail()}">${member.getEmail()}</a></li>
                     <li class="list-group-item">${thirdList}</li>
                 </ul>
             </div>
